@@ -19,8 +19,8 @@ pipeline{
                     when { expression {  params.action == 'create' } }
             steps{
             gitCheckout(
-                branch: "main",
-                url: "https://github.com/Mubeena21/javaapp.git"
+                branch: "master",
+                url: "https://github.com/Mubeena21/java.git"
             )
             }
         }
