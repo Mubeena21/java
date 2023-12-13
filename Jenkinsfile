@@ -77,7 +77,7 @@ pipeline{
           when { expression {  params.action == 'create' } }
          steps{
             script{
-                 chown -R jenkins:jenkins /var/lib/jenkins/workspace/Myapp/target/
+                 sh 'chown -R jenkins:jenkins /var/lib/jenkins/workspace/Myapp/target/'
                  sh 'curl -X PUT -u admin:Admin123 -T  /var/lib/jenkins/workspace/Myapp/target/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar "http://3.87.183.127:8082/artifactory/example-repo-local/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar"'
                 }
             }
